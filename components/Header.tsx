@@ -1,18 +1,18 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import Link from 'next/link';
-import { useStore } from '@/lib/store';
-import { Button } from '@/components/ui/button';
-import { AuthModal } from '@/components/AuthModal';
-import { ThemeToggle } from '@/components/ThemeToggle';
+import { useState } from "react";
+import Link from "next/link";
+import { useStore } from "@/lib/store";
+import { Button } from "@/components/ui/button";
+import { AuthModal } from "@/components/AuthModal";
+import { ThemeToggle } from "@/components/ThemeToggle";
 
 export function Header() {
   const { user, setUser } = useStore();
   const [showAuthModal, setShowAuthModal] = useState(false);
 
   const handleLogout = () => {
-    localStorage.removeItem('token');
+    localStorage.removeItem("token");
     setUser(null);
   };
 
@@ -20,7 +20,7 @@ export function Header() {
     <header className="border-b">
       <div className="container mx-auto px-4 py-4 flex items-center justify-between">
         <Link href="/" className="text-xl font-bold">
-          TradeSim
+          Go Invest
         </Link>
         <div className="flex items-center space-x-4">
           {user ? (
